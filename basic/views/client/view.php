@@ -21,10 +21,9 @@ $itemDate = [];
 $itemInfo = [];
 foreach($sales as $sale){
     $itemDate[]=$sale['date'];
-    echo '<tr><td>'.$sale['item'].'</td><td>'.$sale['date'].'</td><td>'.'
-    
-    <a href="/yii/basic/web/index.php?r=client%2Fdelete&id='.$sale['id'].'" title="Delete" aria-label="Delete" data-pjax="0" data-confirm="Are you sure you want to delete this item?" data-method="post"><span class="glyphicon glyphicon-trash"></span></a>
-    '.'</td></tr>';
+    echo '<tr><td>'.$sale['item'].'</td><td>'.$sale['date'].'</td><td>'.'    
+         <a href="/yii/basic/web/index.php?r=client%2Fdelete&id='.$sale['id'].'" title="Delete" aria-label="Delete" data-pjax="0" data-confirm="Are you sure you want to delete this item?" data-method="post"><span class="glyphicon glyphicon-trash"></span></a>
+         '.'</td></tr>';
 }
 ?>
 </table>

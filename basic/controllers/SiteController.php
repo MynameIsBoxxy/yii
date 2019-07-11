@@ -66,7 +66,8 @@ class SiteController extends Controller
 
        if (!Yii::$app->user->isGuest) {
         //return $this->goHome();
-        $this->redirect('/yii/basic/web/index.php?r=client/index',302);
+        //$this->redirect('/yii/basic/web/index.php?r=client/index',302);
+        return $this->redirect(['client/index']);
     }
 
     $model = new LoginForm();

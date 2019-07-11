@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+use yii\helpers\Url;
 
 $this->title = "Клиенты";
 
@@ -11,11 +12,16 @@ $this->title = "Клиенты";
 <p>
         <?= Html::a('Добавить клиента', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
-<div>
-<ol>
+<div class="clients">
+<ol class="list-group">
 <?
         foreach($data as $item){
-            echo '<li>'.$item->name.'<a href="/yii/basic/web/index.php?r=client%2Fview&id='.$item->id.'">Просмотр</a>'.'<a href="/yii/basic/web/index.php?r=client%2Fupdate&id='.$item->id.'">Редактировать</a></li>';
+            echo '<li class="list-group-item">'.
+            '<a href="'.Url::to(['client/view','id'=>$item->id]).'"><span class="glyphicon glyphicon-eye-open"></span></a>'.
+            '<a href="'.Url::to(['client/update','id'=>$item->id]).'"><span class="glyphicon glyphicon-pencil"></span></a>'
+            .$item->name.'
+            
+            </li>';
 
         }
     ?>

@@ -22,6 +22,7 @@ AppAsset::register($this);
     <?php $this->registerCsrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
+    
 </head>
 <body>
 <?php $this->beginBody() ?>
@@ -76,6 +77,7 @@ AppAsset::register($this);
 </footer>
 
 <?php $this->endBody() ?>
+<script src="/yii/basic/web/js/js.js"></script>
 </body>
 </html>
 <?php $this->endPage() ?>
