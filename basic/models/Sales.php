@@ -45,9 +45,9 @@ class Sales extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'id_clients' => 'Id Clients',
-            'item' => 'Item',
-            'date' => 'Date',
+            'id_clients' => 'Клиент',
+            'item' => 'Товар',
+            'date' => 'Дата',
         ];
     }
 

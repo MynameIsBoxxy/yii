@@ -49,7 +49,7 @@ class Clients extends \yii\db\ActiveRecord
      */
     public function getSales()
     {
-        return $this->hasMany(Sales::className(), ['id_clients' => 'id']);
+        return $this->hasMany(Sales::className(), ['id_clients' => 'id'])->orderby('date');
     }
     public function getClients(){
         $query = Clients::find()->all();

@@ -19,7 +19,21 @@ class ClientController extends Controller{
         $oneCl = Clients::findOne($id);
         $data = $oneCl->sales;        
 
-        return $this->render('view',['client'=>$oneCl,'sales'=>$data]);
+        return $this->render('view',['client'=>$oneCl,'sales'=>$data,]);
+    }
+    public function actionCreateItem($id){
+        $model = new Clients();
+        $data = $model->getClients();
+        $model_s = new Sales();
+        $model_s->id_clients = $id;
+        if ($model_s->load(Yii::$app->request->post()) && $model_s->save()) {
+            return $this->redirect(['index','data'=>$data]);
+        }
+
+        return $this->render('create-item', [
+            'model' => $model_s,
+        ]);
+
     }
     public function actionUpdate($id){
         $model = Clients::findOne($id);
@@ -39,5 +53,9 @@ class ClientController extends Controller{
             return $this->redirect(['index','data'=>$data]);
         }
         return $this->render('create',['model'=>$model]);
+    }
+    public function actionDelete($id){
+        $model = Sales::findOne($id)->delete();
+        return $this->redirect(['index']);
     }
 }
