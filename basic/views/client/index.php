@@ -5,7 +5,7 @@ use yii\grid\GridView;
 use yii\helpers\Url;
 
 $this->title = "Клиенты";
-
+$this->params['breadcrumbs'][] = $this->title;
 ?>
 
 <h1><?=Html::encode($this->title)?></h1>

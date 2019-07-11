@@ -6,7 +6,8 @@ use miloschuman\highcharts\Highcharts;
 use yii\web\JsExpression;
 
 $this->title = "Информация о клиенте";
-
+$this->params['breadcrumbs'][] = ['label' => 'Клиенты', 'url' => ['index']];
+$this->params['breadcrumbs'][] = $client->name;
 ?>
 
 <h1><?=$this->title.' '.$client->name?></h1>

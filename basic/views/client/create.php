@@ -6,6 +6,8 @@ use yii\helpers\Html;
 /* @var $model app\models\Country */
 
 $this->title = 'Добавить клиента';
+$this->params['breadcrumbs'][] = ['label' => 'Клиенты', 'url' => ['index']];
+$this->params['breadcrumbs'][] = $this->title;
 
 ?>
 <div class="create-update">

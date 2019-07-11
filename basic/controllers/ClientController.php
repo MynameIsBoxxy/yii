@@ -34,13 +34,10 @@ class ClientController extends Controller{
         if (Yii::$app->user->isGuest) {
             throw new NotFoundHttpException('The requested page does not exist.');
         }       
-        /* $model = new Clients();
-        $data = $model->getClients(); */
         $model_s = new Sales();
         $model_s->id_clients = $id;
         if ($model_s->load(Yii::$app->request->post()) && $model_s->save()) {
-            //return $this->redirect(['index','data'=>$data]);
-            return $this->redirect(['index']);
+            return $this->redirect(['view','id'=>$id]);
         }
 
         return $this->render('create-item', [
