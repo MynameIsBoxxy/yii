@@ -3,6 +3,7 @@
 use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\helpers\Url;
+use app\components\FormatterTel;
 
 $this->title = "Клиенты";
 $this->params['breadcrumbs'][] = $this->title;
@@ -11,6 +12,11 @@ $this->params['breadcrumbs'][] = $this->title;
 <h1><?=Html::encode($this->title)?></h1>
 <p>
         <?= Html::a('Добавить клиента', ['create'], ['class' => 'btn btn-success']) ?>
+    </p>
+    <p>
+<?
+
+?>
     </p>
 <div class="clients">
 <ol class="list-group">
@@ -27,3 +33,7 @@ $this->params['breadcrumbs'][] = $this->title;
     ?>
 </ol>
 </div>
+
+<?
+
+echo Yii::$app->formatter->asTel('89108540678','7 (999) 555-65-99');
