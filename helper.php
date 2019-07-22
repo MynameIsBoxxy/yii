@@ -9,22 +9,17 @@ class MyHelpers {
     }
 
     public static function method_two ($str = "created_at"){
-        
-        $offset = 0;
         $ar = [];
-        while (($pos = strpos($str,'_',$offset)) != false){
-            $ar[] = $pos;
-            $offset   = $pos + 1;            
-        }
+        $res = '';
 
-        foreach(array_reverse($ar) as $key=>$val){            
-            $str = substr_replace($str,'',$val,1);
-            if ($val + 1 <= strlen($str)){
-                $str = substr_replace($str,strtoupper($str[$val]),$val,1);
+        $ar = StringHelper::explode($str,'_');
+
+        for($i = 0;$i < count($ar);$i++)
+            {
+                $res.= StringHelper::mb_ucwords($ar[$i]);
             }
-        }
-
-        return strtoupper($str[0]).substr($str,1);
+            
+        return $res;
         
     }
 
