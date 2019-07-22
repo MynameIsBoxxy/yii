@@ -2,6 +2,7 @@
 namespace app\components;
 
 use yii\helpers\StringHelper;
+use yii\helpers\Inflector;
 
 class MyHelpers {
     public static function method_one(){
@@ -18,19 +19,14 @@ class MyHelpers {
             {
                 $res.= StringHelper::mb_ucwords($ar[$i]);
             }
-            
+
         return $res;
         
     }
 
     public static function method_three(){
-        //Kupi slona
-        //Купи слона
-        $ar = array(
-            'К'=>'K', 'и'=>'i', 'о'=>'o',
-            'у'=>'u', 'с'=>'s', 'н'=>'n',
-            'п'=>'p', 'л'=>'l', 'а'=>'a',
-        );
-        return strtr("Купи слона",$ar);
+
+        return Inflector::transliterate("Купи слона");
+
     }
 }
