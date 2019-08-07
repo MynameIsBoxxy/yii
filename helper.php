@@ -10,18 +10,7 @@ class MyHelpers {
     }
 
     public static function method_two ($str = "created_at"){
-        $ar = [];
-        $res = '';
-
-        $ar = StringHelper::explode($str,'_');
-
-        for($i = 0;$i < count($ar);$i++)
-            {
-                $res.= StringHelper::mb_ucwords($ar[$i]);
-            }
-
-        return $res;
-        
+       return Inflector::camelize($str);        
     }
 
     public static function method_three(){
